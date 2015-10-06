@@ -6,46 +6,48 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Line2D;
 import java.util.Random;
 import java.awt.Color;
+
 /**
- * Write a description of class BasicBuilding here.
+ * Write a description of class Ground here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BasicBuilding
+public class Ground
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int xLeft;
-    private int yTop;
-    private Random r1;
-    private int colorRand;
-    private int widthRand;
-    private Color[] colorArray = {Color.GRAY, Color.RED, Color.BLACK}; /*Jay made this*/
+    private int x;
     /**
-     * Default constructor for objects of class BasicBuilding
+     * Default constructor for objects of class Ground
      */
-    public BasicBuilding(int x,int y)
+    public Ground()
     {
-        xLeft = x;
-        yTop = y;
-        r1 = new Random();
-        colorRand = r1.nextInt(3);
-        widthRand = r1.nextInt(60);
+        x = 0;
     }
-    
+
     /**
+     * An example of a method - replace this comment with your own
+     *    that describes the operation of the method
      *
      * @pre        preconditions for the method
      *            (what the method assumes about the method's parameters and class's state)
      * @post    postconditions for the method
      *            (what the method guarantees upon completion)
      * @param    y    description of parameter y
+     * @return    description of the return value
      */
     public void draw(Graphics2D g2)
     {
-        Rectangle2D.Double body = new Rectangle2D.Double(xLeft,yTop,widthRand+40,750);
-        g2.setPaint(colorArray[colorRand]);
-        g2.fill(body);
+        Rectangle2D.Double road = new Rectangle2D.Double(0,500,800,80);
+        g2.setPaint(Color.BLACK);
+        g2.fill(road);
+        int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+        g2.setPaint(Color.YELLOW);
+        for (int item : numbers) 
+        {
+             Rectangle2D.Double newRoadBlock = new Rectangle2D.Double((item-1)*80,540,40,10);
+             g2.fill(newRoadBlock);
+        }
     }
 
 }
