@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.util.Random;
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -18,19 +19,28 @@ public class CityscapeComponent extends JComponent
     private BasicBuilding building6;
     private Ground groundObject;
     private Sky skyObject;
+    private Random r2;
+    private int y;
     /**
-     * 
+     * Describe instance variables
      */
-    public CityscapeComponent()
+    public CityscapeComponent(String timeOfDay)
     {
-        building1 = new BasicBuilding(20,300);
-        building2 = new BasicBuilding(140,275);
-        building3 = new BasicBuilding(260,150);
-        building4 = new BasicBuilding(390,345);
-        building5 = new BasicBuilding(520,290);
-        building6 = new BasicBuilding(640,320);
+        r2 = new Random();
+        y = r2.nextInt(200)+150;
+        building1 = new BasicBuilding(20,y);
+        y = r2.nextInt(200)+150;
+        building2 = new BasicBuilding(140,y);
+        y = r2.nextInt(200)+150;
+        building3 = new BasicBuilding(260,y);
+        y = r2.nextInt(200)+150;
+        building4 = new BasicBuilding(390,y);
+        y = r2.nextInt(200)+150;
+        building5 = new BasicBuilding(520,y);
+        y = r2.nextInt(200)+150;
+        building6 = new BasicBuilding(640,y);
         groundObject = new Ground();
-        skyObject = new Sky();
+        skyObject = new Sky(timeOfDay);
     }
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.

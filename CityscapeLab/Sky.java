@@ -14,6 +14,16 @@ import java.awt.Color;
  */
 public class Sky
 {
+    private String time;
+    /**
+     * 
+     * 
+     * 
+     */
+    public Sky(String timeInput)
+    {
+        time = timeInput;
+    }
     /**
      * An example of a method - replace this comment with your own
      *    that describes the operation of the method
@@ -28,7 +38,14 @@ public class Sky
     public void draw(Graphics2D g2)
     {
         Rectangle2D.Double sky = new Rectangle2D.Double(0,0,1000,1000);
-        g2.setPaint(Color.BLUE);
+        if (time.equals( "d"))
+        {
+            g2.setPaint(Color.BLUE);
+        }
+        else
+        {
+            g2.setPaint(Color.BLACK);
+        }
         g2.fill(sky);
     }
 

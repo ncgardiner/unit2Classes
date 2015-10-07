@@ -20,8 +20,8 @@ public class BasicBuilding
     private Random r1;
     private int colorRand;
     private int widthRand;
-    private Color[] colorArray = {Color.GRAY, Color.RED, Color.BLACK}; /*Jay made this*/
-    /**
+    private Color[] colorArray = {Color.GRAY, Color.RED, Color.YELLOW}; /*Jay made this*/
+    /** 
      * Default constructor for objects of class BasicBuilding
      */
     public BasicBuilding(int x,int y)
