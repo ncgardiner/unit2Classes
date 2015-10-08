@@ -38,6 +38,9 @@ public class Ground
      */
     public void draw(Graphics2D g2)
     {
+        Rectangle2D.Double grass = new Rectangle2D.Double(0,480,800,30);
+        g2.setPaint(Color.GREEN);
+        g2.fill(grass);
         Rectangle2D.Double road = new Rectangle2D.Double(0,500,800,80);
         g2.setPaint(Color.BLACK);
         g2.fill(road);

@@ -19,13 +19,19 @@ public class CityscapeComponent extends JComponent
     private BasicBuilding building6;
     private Ground groundObject;
     private Sky skyObject;
+    private CelestialBody sun_or_moon;
     private Random r2;
     private int y;
+    private int xPos;
+    private int yPos;
+    private int loopCount;
+    private String time;
     /**
      * Describe instance variables
      */
     public CityscapeComponent(String timeOfDay)
     {
+        time = timeOfDay;
         r2 = new Random();
         y = r2.nextInt(200)+150;
         building1 = new BasicBuilding(20,y);
@@ -40,7 +46,10 @@ public class CityscapeComponent extends JComponent
         y = r2.nextInt(200)+150;
         building6 = new BasicBuilding(640,y);
         groundObject = new Ground();
-        skyObject = new Sky(timeOfDay);
+        skyObject = new Sky(time);
+        xPos = 0;
+        yPos = 0;
+        sun_or_moon = new CelestialBody(time,xPos,yPos);
     }
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -52,6 +61,7 @@ public class CityscapeComponent extends JComponent
         
         Graphics2D g2 = (Graphics2D) g;
         skyObject.draw(g2);
+        sun_or_moon.draw(g2);
         building1.draw(g2);
         building2.draw(g2);
         building3.draw(g2);
@@ -62,15 +72,44 @@ public class CityscapeComponent extends JComponent
     }
     
     /**
-     * Animate the cityscape by updating the objects such that they appear to be animated when they are next drawn.
-     *
+     * Updates the Sun / Moon to move in an arc across the sky
      */
     public void nextFrame()
     {
         // update the objects in the cityscape so they are animated
         // ...
-        
-        
+        loopCount+=1;
+        if (loopCount<=10)
+        {
+            yPos -= 5;
+        }
+        else
+        {
+            if (loopCount <= 20)
+            {
+                yPos -= 2;
+            }
+            else
+            {
+                if (loopCount <= 30)
+                {
+                    yPos += 0;
+                }
+                else
+                {
+                    if (loopCount <= 40)
+                    {
+                        yPos += 2;
+                    }
+                    else
+                    {
+                        yPos += 5;
+                    }
+                }
+            }
+        }
+        xPos = loopCount*11;
+        sun_or_moon = new CelestialBody(time,xPos,yPos);
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         repaint();
