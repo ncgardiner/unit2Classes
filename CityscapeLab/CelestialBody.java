@@ -6,16 +6,21 @@ import java.awt.Color;
 /**
  * Write a description of class CelestialBody here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author ngardiner
+ * @version 8 October 2015
  */
 public class CelestialBody
 {
+    /** 
+     * time- a copy of the timeOfDay recieved from the user
+     * x- the starting x position of the sun/moon
+     * y- the starting y position of the sun/moon
+     */
     private String time;
     private int x; 
     private int y;
     /**
-     * 
+     *  Default constructor for class CelestialBody
      */
     public CelestialBody(String timeOfDay,int xPos,int yPos)
     {
@@ -24,10 +29,10 @@ public class CelestialBody
         y= yPos;
     }
     /**
-     * An example of a method - replace this comment with your own
+     *  Draws the sun/moon and fills them with the correct color
+     *  If its nighttime, a second black ellipse will cover part of the moon
+     *  to make a crescent
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
      */
     public void draw(Graphics2D g2)
     {

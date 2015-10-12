@@ -8,33 +8,16 @@ import java.util.Random;
 import java.awt.Color;
 
 /**
- * Write a description of class Ground here.
+ * Defines and draws a ground for the cityscape, consisting of a road with yellow lines
+ * and grass
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @ngardiner
+ * @version 8 October 2015
  */
 public class Ground
 {
-    /** description of instance variable x (add comment for each instance variable) */
-    private int x;
     /**
-     * Default constructor for objects of class Ground
-     */
-    public Ground()
-    {
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     * Defines the parameters for all objects in the Ground, then draws them
      */
     public void draw(Graphics2D g2)
     {

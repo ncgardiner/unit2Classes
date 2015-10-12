@@ -7,14 +7,21 @@ import java.awt.geom.Line2D;
 import java.util.Random;
 import java.awt.Color;
 /**
- * Write a description of class BasicBuilding here.
+ *   Creates a building of random height, width, and color
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author ngardiner
+ * @version 8 October 2015
  */
 public class BasicBuilding
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /** 
+     * xLeft- the x coordinate for the top left starting position of the building
+     * yTop-  the y coordinate for the top left starting position of the building
+     * r1- a random variable used to randomize the color and width of the building
+     * colorRand- the randomly generated value for the color of the building
+     * widthRand- the randomly generated value for the width of the building
+     * colorArray- an Array containing all possible building colors
+    */
     private int xLeft;
     private int yTop;
     private Random r1;
@@ -34,12 +41,7 @@ public class BasicBuilding
     }
     
     /**
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
+     *    Draws the building of random height, width, and color
      */
     public void draw(Graphics2D g2)
     {
